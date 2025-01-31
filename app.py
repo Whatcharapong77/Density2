@@ -16,9 +16,6 @@ Original file is located at
     https://colab.research.google.com/drive/1oFwvr9mWLqOQQuFK2ELikIsS88hk07FK
 """
 
-# 🔹 ติดตั้ง Gradio (ใช้สร้าง Web App)
-!pip install gradio --quiet
-
 import gradio as gr
 
 # 🔹 ฟังก์ชันคำนวณปริมาณการเติมหมึก (รองรับช่องว่างและล็อกตัวเลข)
