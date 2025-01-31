@@ -17,6 +17,7 @@ Original file is located at
 """
 
 import gradio as gr
+import os
 
 # 🔹 ฟังก์ชันคำนวณปริมาณการเติมหมึก (รองรับช่องว่างและล็อกตัวเลข)
 def calculate_ink(
@@ -144,5 +145,11 @@ with gr.Blocks(css=css) as demo:
         ],
     )
 
-# 🔹 เปิดใช้งาน Web App
-demo.launch(share=True)
+# สร้าง Web Interface
+iface = gr.Interface(fn=greet, inputs="text", outputs="text")
+
+# ใช้ Port จาก Render (ค่า Default = 7860)
+port = int(os.getenv("PORT", 7860))
+
+# รัน Web App บน 0.0.0.0 และใช้ Port ที่ได้จาก Render
+iface.launch(server_name="0.0.0.0", server_port=port)
