@@ -1,0 +1,12 @@
+name: Keep Render App Alive
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"  # รันทุก 10 นาที
+
+jobs:
+  keep_alive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render Web App
+        run: curl -s https://density2.onrender.com > /dev/null
